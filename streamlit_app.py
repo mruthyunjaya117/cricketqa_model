@@ -73,9 +73,9 @@ st.title("Cricket QA Bot")
 # Explanation about the QA system
 st.sidebar.markdown(
     """
-    ## About the QA System
+    ## About the QA RAG System
     
-    This Cricket QA Bot uses a combination of language models, embeddings, and retrieval mechanisms to answer cricket related queries.
+    This Cricket QA Bot uses a combination of language models, embeddings, and retrieval augmented generation (RAG) retrieval mechanisms to answer cricket related queries.
     
     - **Language Model:** TheBloke/Llama-2-7B-Chat-GGML
     - **Embeddings Model:** sentence-transformers/all-MiniLM-L6-v2
