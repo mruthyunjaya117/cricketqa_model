@@ -39,7 +39,7 @@ def retrieval_qa_chain(llm, prompt, db):
     return qa_chain
 
 #Loading the model
-@st.cache_data()
+@st.cache_data(persist='disk')
 def load_llm():
     # Load the locally downloaded model here
     llm = CTransformers(
@@ -51,7 +51,7 @@ def load_llm():
     return llm
 
 #QA Model Function
-@st.cache_data()
+@st.cache_data(persist='disk')
 def qa_bot():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2",
                                        model_kwargs={'device': 'cpu'})
