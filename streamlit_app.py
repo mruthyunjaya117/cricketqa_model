@@ -48,6 +48,7 @@ def load_llm():
         max_new_tokens = 512,
         temperature = 0.5
     )
+    st.success("Loaded LLM model successfully!")
     return llm
 
 #QA Model Function
@@ -59,7 +60,7 @@ def qa_bot():
     llm = load_llm()
     qa_prompt = set_custom_prompt()
     qa = retrieval_qa_chain(llm, qa_prompt, db)
-
+    st.success("Loaded embeddings model successfully!")
     return qa
 
 #output function
