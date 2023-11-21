@@ -42,7 +42,7 @@ def retrieval_qa_chain(llm, prompt, db):
 def load_llm():
     # Load the locally downloaded model here
     llm = CTransformers(
-        model = r"./llama2",
+        model = "TheBloke/Llama-2-7B-Chat-GGML",
         model_type="llama",
         max_new_tokens = 512,
         temperature = 0.5
@@ -51,7 +51,7 @@ def load_llm():
 
 #QA Model Function
 def qa_bot():
-    embeddings = HuggingFaceEmbeddings(model_name=r"./embeddings/",
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2",
                                        model_kwargs={'device': 'cpu'})
     db = FAISS.load_local(DB_FAISS_PATH, embeddings)
     llm = load_llm()
